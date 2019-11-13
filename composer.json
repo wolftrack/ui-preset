@@ -1,0 +1,36 @@
+{
+    "name": "wolftrack/ui-presets",
+    "description": "Custom Laravel UI presets",
+    "keywords": ["wolftrack", "laravel", "ui", "presets"],
+    "authors": [
+        {
+            "name": "Georg Thomassen",
+            "email": "geo.cornelius@gmail.com",
+            "homepage": "https://georgthomassen.dk",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wolftrack\\Ui\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wolftrack\\Ui\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wolftrack\\Ui\\PresetsServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.3",
+        "laravel/ui": "^1.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
