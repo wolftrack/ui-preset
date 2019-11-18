@@ -1,5 +1,5 @@
 {
-    "name": "wolftrack/ui-presets",
+    "name": "wolftrack/ui-preset",
     "description": "Custom Laravel UI presets",
     "keywords": ["wolftrack", "laravel", "ui", "presets"],
     "authors": [
