@@ -14,7 +14,7 @@ class WolftrackPreset extends Preset
         static::updateStyles();
         static::updateAssets();
         static::updateBootstrapping();
-//        static::removeNodeModules();
+        static::removeNodeModules();
     }
 
     public static function installAuth()

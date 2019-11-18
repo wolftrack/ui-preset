@@ -35,7 +35,7 @@ class UiCommand extends Command
             WolftrackPreset::installAuth();
         }
 
-        $this->info('Tailwind CSS scaffolding installed successfully.');
+        $this->info('Wolftrack UI scaffolding installed successfully.');
         $this->info('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
     }
 }
