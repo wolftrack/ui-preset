@@ -28,8 +28,7 @@
         }
     },
     "require": {
-        "php": "^7.3",
-        "laravel/ui": "^1.1"
+        "laravel/framework": "^5.5 || ^6.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
