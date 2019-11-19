@@ -1,4 +1,7 @@
 const mix = require('laravel-mix');
+const cssImport = require('postcss-import');
+const cssNesting = require('postcss-nesting');
+const tailwindcss = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +16,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        require('tailwindcss'),
+        cssImport(),
+        cssNesting(),
+        tailwindcss(),
     ]);
 
 if (mix.inProduction()) {
