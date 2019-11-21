@@ -36,6 +36,7 @@ class UiCommand extends Command
         }
 
         $this->info('Wolftrack UI scaffolding installed successfully.');
-        $this->info('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
+        $this->info('Run "npm install && npm run dev" to compile your fresh scaffolding for the frontend.');
+        $this->info('Run "composer update" to pull in packages for the backend');
     }
 }

@@ -2,6 +2,7 @@ const mix = require('laravel-mix');
 const cssImport = require('postcss-import');
 const cssNesting = require('postcss-nesting');
 const tailwindcss = require('tailwindcss');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -19,9 +20,17 @@ mix.js('resources/js/app.js', 'public/js')
         cssImport(),
         cssNesting(),
         tailwindcss(),
-    ]);
+    ])
+    .webpackConfig({
+        resolve: {
+            alias: {
+                '@': path.resolve('resources/js'),
+            },
+        },
+    })
+    .version()
+    .sourceMaps();
 
 if (mix.inProduction()) {
-    mix.purgeCss()
-        .version();
+    mix.purgeCss();
 }
