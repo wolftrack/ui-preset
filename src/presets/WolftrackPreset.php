@@ -2,7 +2,6 @@
 
 namespace Wolftrack\Ui\Presets;
 
-use Illuminate\Support\Str;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Console\Presets\Preset;
 
@@ -15,7 +14,7 @@ class WolftrackPreset extends Preset
         static::updateStyles();
         static::updateAssets();
         static::updateBootstrapping();
-        static::removeNodeModules();
+       static::removeNodeModules();
     }
 
     public static function installAuth()
@@ -70,7 +69,14 @@ class WolftrackPreset extends Preset
             if (! $filesystem->isDirectory($directory = resource_path('js/Pages'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
             }
+
+            $filesystem->copyDirectory(__DIR__.'/../stubs/resources/views', resource_path('views'));
         });
+
+        file_put_contents(
+            base_path('routes/web.php'),
+            file_get_contents(__DIR__.'/../stubs/routes/web.php')
+        );
 
         copy(__DIR__.'/../stubs/tailwind.config.js', base_path('tailwind.config.js'));
         copy(__DIR__.'/../stubs/webpack.mix.js', base_path('webpack.mix.js'));
